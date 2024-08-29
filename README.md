@@ -1,6 +1,6 @@
 # proyecto_recomendacion_peliculas
 
-#![](ruta/al/gif.gif)
+<img src="data/PF.gif" width="700" alt="">
 
 ## Contenidos
 - [Introducción](#introducción)
