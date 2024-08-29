@@ -1,7 +1,7 @@
 # proyecto_recomendacion_peliculas
 
 
-##Contenidos
+#Contenidos
 - [Introducción](#introducción)
 - [Instalación](#instalación)
 - [Uso](#uso)
