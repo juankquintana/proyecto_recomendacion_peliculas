@@ -4,9 +4,11 @@
 
 ## Contenidos
 - [Introducción](#introducción)
-- [Data](#Data)
-- [Alcance](#Alcance)
-- [Literatura](#Literatura)
+- [Data](#data)
+- [Contenidos](#contenidos)
+- [Alcance](#alcance)
+- [Literatura](#literatura)
+- [Recomendador](#recomendador)
 
 ## Introducción
 *¿Qué películas me recomienda un sistema de aprendizaje no supervisado sabiendo que he calificado ciertas películas con un puntaje  entre 1 y 5?*
@@ -17,14 +19,29 @@ La clave del éxito de las plataformas de streaming, sobre todo Netflix la precu
 
 
 ## Data
-Se encuentran los datos en formato CSV:
-
-movies_metadata.csv: El archivo principal de metadatos de películas. Contiene información sobre 45,000 películas incluidas en el conjunto de datos completo de MovieLens. Las características incluyen pósters, fondos, presupuesto, ingresos, fechas de lanzamiento, idiomas, países y compañías de producción.
-
-keywords.csv: Contiene las palabras clave de la trama de las películas de nuestro conjunto de datos MovieLens. Está disponible en forma de un objeto JSON convertido a cadena.
-
-ratings_small.csv: El subconjunto de 100,000 calificaciones de 700 usuarios en 9,000 películas.
+Todo lo que se encuentra en la carpeta data:
+Contiene las bases de datos originales usadas y unos datos con las transformaciones necesarias para poder hacer el algoritmo recomendador de manera eficiente y autocontenida.
+   - *base_usuarios.csv*: Una base de que pelicula vio cada usuario y el rating despues de hacer una limpieza de usuario que no tenian rating a algunas peliculas (sacada a partir de la base ratings_sample.csv)
+   - *df_clusters.csv*: Contiene el user id y el cluster al que fue asignado segun el analisis por clusters hecho
+   - *df_final.csv*: Es el join entre ratings y metadata para inluir el nombre de la pelicula usado para la recomendacion clusters
+   - *df_inner.csv*: Integra los dos csv anteriores en uno, es decir, tiene usuario, ratings, pelicula, cluster usado para la recomendacion por clusters
+   - *keywords.csv*: Contiene las palabras clave de la trama de las películas de nuestro conjunto de datos MovieLens. Está disponible en forma de un objeto JSON convertido a cadena.
+   - *movies_metada.csv*: El archivo principal de metadatos de películas. Contiene información sobre 45,000 películas incluidas en el conjunto de datos completo de MovieLens. Las características incluyen pósters, fondos, presupuesto, ingresos, fechas de lanzamiento, idiomas, países y compañías de producción.
+   - *ratings_sample.csv*: Una parte de la base total de rating que tenia suficientes ratings para varios usuarios para poder realizar el modelo de recomendacion.
+   - *ratings_small.csv*: El subconjunto de 100,000 calificaciones de 700 usuarios en 9,000 películas. Una base pequeña de ratings, fue tan pequeña que se decidio no usar y tomar un sample de la base original que es la que se menciono anteriomente.
+   - *user_gener_c.csv*: Una base que facilita saber las peliculas que vio cada usuario y a que genero pertenecia (util para recomendar en base a generos en caso de no tener informacion de un usuario pero si el genero que le gusta)
  
+
+## Contenidos
+Se puede ver que hay otras dos carpetas en el repositorio:
+- **ModelosNLP**
+  
+Se encuentra todas las pruebas para el modelo de NLP, en este se probo tanto CountVectorizer, TF-IDF y LDA. Finalmente se decidio utilizar CountVectorizer debido a que el modelo de NLP contenia los generos en el analisis y estos debian mantener su peso para asi recomendar peliculas del mismo genero.
+
+Tambien se encuentran dos archivos comprimidos numnpy: cosine_sim_sparse_matrixCOUNT.npz y cosine_sim_sparse_matrixTFIDF.npz, estos son las matrices despues de sacar similitud de coseno tanto para el Count Vectorizer y el TD-IDF Vectorizer respectivamente. Al guardarlas asi es mas facil llamarlas desde el notebook recomendador final.
+
+- **OtrosModelos**
+
 
 ## Alcance
 El alcance inicial definido será un clustering primero usando PCA para determinar las dimensiones más relevantes de las que esta compuestos los datos, aunque inicialmente ya se pudo ver unas variables bastante interesantes que habrá que codificar pues son en su mayoría categóricas para después pasar a usar clustering y determinar grupos de personas o películas que se parecen y recomendarle a las personas según sus calificaciones de otras películas que han visto.
@@ -45,6 +62,5 @@ Sistemas de recomendación híbrido
 
 * Profundizaremos en estos enfoques a medida que avancemos en el desarrollo del curso y el proyecto
 
-
-
-
+## Recomendador
+Finalmente se define un recomendador 
