@@ -40,6 +40,8 @@ Se encuentra todas las pruebas para el modelo de NLP, en este se probo tanto Cou
 
 Tambien se encuentran dos archivos comprimidos numnpy: cosine_sim_sparse_matrixCOUNT.npz y cosine_sim_sparse_matrixTFIDF.npz, estos son las matrices despues de sacar similitud de coseno tanto para el Count Vectorizer y el TD-IDF Vectorizer respectivamente. Al guardarlas asi es mas facil llamarlas desde el notebook recomendador final.
 
+El ultimo archivo en la carpeta es df_keywords_title.pkl el cual tiene la base usada para el recomendador, esta tiene id de peliculas, titulo original de la pelicula, los keywords originales y las keywords despues de hacer limpieza junto con el genero.
+
 - **OtrosModelos**
 
 
