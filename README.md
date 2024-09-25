@@ -79,24 +79,6 @@ Se encuentra Proyecto Peliculas Clusters Final.ipynb, el notebook usado para def
  - ***Docs***
 Contiene el documento final en formato PDF y la presentacion usada para el video tambien en este mismo formato
 
-## Alcance
-El alcance inicial definido será un clustering primero usando PCA para determinar las dimensiones más relevantes de las que esta compuestos los datos, aunque inicialmente ya se pudo ver unas variables bastante interesantes que habrá que codificar pues son en su mayoría categóricas para después pasar a usar clustering y determinar grupos de personas o películas que se parecen y recomendarle a las personas según sus calificaciones de otras películas que han visto.
-
-## Literatura
-Los sistemas de recomendación (Recommender Systems) son aplicaciones que ofrecen a los usuarios recomendaciones personalizadas de productos y servicios que aún no han adquirido, basadas en sus intereses, con el objeto de incrementar las ventas y mantener la base de clientes satisfecha. Estos sistemas son ampliamente usados en diversas áreas como en plataformas de streaming, redes sociales, planeación de viajes, recomendaciones de música, colocación laboral entre otras [1]
-
-Amazon patentó su primera versión de su sistema de recomendación alrededor del 2004. Esta trajo consigo un incremento del 29% en las ganancias alcanzando los US$12.83 billones en el segundo trimestre fiscal, mientras que Netflix implementó esta herramienta en su aplicación para disminuir el número de suscripciones canceladas y al mismo tiempo aumentar el tiempo promedio que los usuarios interactúan con la aplicación.  [2]
-
-Estos sistemas fueron desarrollados para hacer sugerencias con  base en las preferencias de los usuarios:  su  género favorito, actores, directores, entre otros parámetros,  por ejemplo el sistema de Netflix también agrega una explicación que ayuda al usuario entender por qué esa película esta siendo recomendada,  ayudando a incrementar la credibilidad de la aplicación y la lealtad del usuario. Otro enfoque es la propuesta de películas basada en emociones por ejemplo felicidad, enojo o tristeza.[2]
-
-En el área de diseño e implementación de sistemas de recomendación actualmente existen 4 enfoques: [2]
-
-Sistemas de recomendación basado en contenido
-Sistemas de recomendación basado en filtrado colaborativo
-Sistemas de recomendación basado en conocimiento
-Sistemas de recomendación híbrido
-
-* Profundizaremos en estos enfoques a medida que avancemos en el desarrollo del curso y el proyecto
 
 ## Recomendador
 Finalmente se define un recomendador que se tiene el notebook Recomendadores que toma todos los modelos creados y hace el recomendador final que tiene en cuenta SVD y NLP para recomendar 5 peliculas en cada una. Teniendo en cuenta los resultados observados decidimos descartar el recomendador basado en clustering y similitud del coseno y decidimos mantener los otros tres recomendadores:
