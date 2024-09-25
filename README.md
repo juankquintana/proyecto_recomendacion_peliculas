@@ -10,7 +10,7 @@
 - [Literatura](#literatura)
 - [Recomendador](#recomendador)
 
-
+## Resumen
 Todos los servicios por suscripción masivos compiten por mantener y atraer a usuarios que cada vez tienen más opciones para escoger. Aún cuando creemos que este negocio ya está completamente inventado, ¿cuántas veces nos sorprendemos por las recomendaciones que recibimos de estos servicios? 
 El propósito de este trabajo es explorar las preferencias de los usuarios de una plataforma de películas y tratar de encontrar oportunidades que conduzcan a recomendaciones de contenido curadas y acertadas para ellos. 
 El trabajo presenta varios desafíos:  no contamos con información sobre las características de los usuarios y debemos inferir relaciones entre ellos a través de los ratings que los mismos han dado a las películas.  Existe una gran dimensionalidad en los datos lo que dificulta su manejo y; no somos expertos en este negocio por lo cual se nos dificulta la evaluación de los resultados de los modelos.
@@ -59,12 +59,7 @@ Contiene las bases de datos originales usadas y unos datos con las transformacio
 Se tiene el notebook AnalisisVisualizacionesIniciales.ipynb el cual tiene las visualizaciones iniciales de las bases de datos y graficas que ayudaron a entender inicialmente los datos y que fueron usadas para poner en la presentacion y el documento final.
 
 - **Recomendador Final**
-Se tiene el notebook Recomendadores que toma todos los modelos creados y hace el recomendador final que tiene en cuenta SVD y NLP para recomendar 5 peliculas en cada una. Teniendo en cuenta los resultados observados decidimos descartar el recomendador basado en clustering y similitud del coseno y decidimos mantener los otros tres recomendadores:
-
-1) Para usuarios nuevos se les preguntará qué género es el que más les gusta con el fin de recomendar aquellas películas con el mejor rating utilizando el Recomendador  de Promedios ponderados y sin ponderar, que resulta ser un método simple pero efectivo a la hora de recomendar películas a aquellos usuarios que no cuentan con información previa
-2) Para usuarios que ya existen en la base se le sugerirá al usuarios 5 películas utilizando filtrado por contenido basado en NLP  y otras 5 películas usando filtrado colaborativo con SVD
-
-De esta manera nos aseguramos que para usuarios existentes nos guiamos tanto por las películas que ha visto cómo por la potencial similitud con otros usuarios.
+Se tiene el notebook Recomendadores.ipynb que toma todos los modelos creados y hace el recomendador final que tiene en cuenta SVD y NLP para recomendar 5 peliculas en cada una y si un usuario no existe toma los generos mas populares dado su genero favorito. Para esto se cargan todas las matrices y funciones creadas tanto por *ModelosNLP* y *otrosModelos* como SVD y promedios simple y ponderado. Debido a la limitacion computacional este recomendador final fue hecho en Google Collab despues de comprar mas recursos para poder correr una matriz de gran tamaño, por esta razon para poder correr este recomendador final es necesario contar con una mayor capacidad de RAM, por esta razon recomendamos usar Google Collab o AWS. 
 
 Se puede ver que hay otras dos carpetas en el repositorio:
 - **ModelosNLP**
@@ -100,4 +95,9 @@ Sistemas de recomendación híbrido
 * Profundizaremos en estos enfoques a medida que avancemos en el desarrollo del curso y el proyecto
 
 ## Recomendador
-Finalmente se define un recomendador 
+Finalmente se define un recomendador que se tiene el notebook Recomendadores que toma todos los modelos creados y hace el recomendador final que tiene en cuenta SVD y NLP para recomendar 5 peliculas en cada una. Teniendo en cuenta los resultados observados decidimos descartar el recomendador basado en clustering y similitud del coseno y decidimos mantener los otros tres recomendadores:
+
+1) Para usuarios nuevos se les preguntará qué género es el que más les gusta con el fin de recomendar aquellas películas con el mejor rating utilizando el Recomendador  de Promedios ponderados y sin ponderar, que resulta ser un método simple pero efectivo a la hora de recomendar películas a aquellos usuarios que no cuentan con información previa
+2) Para usuarios que ya existen en la base se le sugerirá al usuarios 5 películas utilizando filtrado por contenido basado en NLP  y otras 5 películas usando filtrado colaborativo con SVD
+
+De esta manera nos aseguramos que para usuarios existentes nos guiamos tanto por las películas que ha visto cómo por la potencial similitud con otros usuarios.
