@@ -39,6 +39,7 @@ Para abordar esta pregunta decidimos probar algunos de los modelos estudiados en
 Los mismos serán explicados con mayor detalle en el siguiente punto así como los resultados principales y las limitaciones encontradas.  
 
 
+
 ## Data
 Todo lo que se encuentra en la carpeta data:
 Contiene las bases de datos originales usadas y unos datos con las transformaciones necesarias para poder hacer el algoritmo recomendador de manera eficiente y autocontenida.
@@ -54,10 +55,21 @@ Contiene las bases de datos originales usadas y unos datos con las transformacio
  
 
 ## Contenidos
+- **Analisis Visualizaciones Iniciales**
+Se tiene el notebook AnalisisVisualizacionesIniciales.ipynb el cual tiene las visualizaciones iniciales de las bases de datos y graficas que ayudaron a entender inicialmente los datos y que fueron usadas para poner en la presentacion y el documento final.
+
+- **Recomendador Final**
+Se tiene el notebook Recomendadores que toma todos los modelos creados y hace el recomendador final que tiene en cuenta SVD y NLP para recomendar 5 peliculas en cada una. Teniendo en cuenta los resultados observados decidimos descartar el recomendador basado en clustering y similitud del coseno y decidimos mantener los otros tres recomendadores:
+
+1) Para usuarios nuevos se les preguntará qué género es el que más les gusta con el fin de recomendar aquellas películas con el mejor rating utilizando el Recomendador  de Promedios ponderados y sin ponderar, que resulta ser un método simple pero efectivo a la hora de recomendar películas a aquellos usuarios que no cuentan con información previa
+2) Para usuarios que ya existen en la base se le sugerirá al usuarios 5 películas utilizando filtrado por contenido basado en NLP  y otras 5 películas usando filtrado colaborativo con SVD
+
+De esta manera nos aseguramos que para usuarios existentes nos guiamos tanto por las películas que ha visto cómo por la potencial similitud con otros usuarios.
+
 Se puede ver que hay otras dos carpetas en el repositorio:
 - **ModelosNLP**
   
-Se encuentra todas las pruebas para el modelo de NLP, en este se probo tanto CountVectorizer, TF-IDF y LDA. Finalmente se decidio utilizar CountVectorizer debido a que el modelo de NLP contenia los generos en el analisis y estos debian mantener su peso para asi recomendar peliculas del mismo genero.
+Se encuentra todas las pruebas para el modelo de NLP en el notebook NLPModels.ipynb, en este se probo tanto CountVectorizer, TF-IDF y LDA. Finalmente se decidio utilizar CountVectorizer debido a que el modelo de NLP contenia los generos en el analisis y estos debian mantener su peso para asi recomendar peliculas del mismo genero.
 
 Tambien se encuentran dos archivos comprimidos numnpy: cosine_sim_sparse_matrixCOUNT.npz y cosine_sim_sparse_matrixTFIDF.npz, estos son las matrices despues de sacar similitud de coseno tanto para el Count Vectorizer y el TD-IDF Vectorizer respectivamente. Al guardarlas asi es mas facil llamarlas desde el notebook recomendador final.
 
@@ -65,6 +77,8 @@ El ultimo archivo en la carpeta es df_keywords_title.pkl el cual tiene la base u
 
 - **OtrosModelos**
 Se encuentra Proyecto Peliculas Clusters Final.ipynb, el notebook usado para definir los clusters para los usuarios teniendo en cuenta el rating que le dieron a peliculas por genero
+ 
+
 
 ## Alcance
 El alcance inicial definido será un clustering primero usando PCA para determinar las dimensiones más relevantes de las que esta compuestos los datos, aunque inicialmente ya se pudo ver unas variables bastante interesantes que habrá que codificar pues son en su mayoría categóricas para después pasar a usar clustering y determinar grupos de personas o películas que se parecen y recomendarle a las personas según sus calificaciones de otras películas que han visto.
