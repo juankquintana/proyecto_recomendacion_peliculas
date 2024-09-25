@@ -75,7 +75,9 @@ El ultimo archivo en la carpeta es df_keywords_title.pkl el cual tiene la base u
 
 - ***OtrosModelos***
 Se encuentra Proyecto Peliculas Clusters Final.ipynb, el notebook usado para definir los clusters para los usuarios teniendo en cuenta el rating que le dieron a peliculas por genero
- 
+
+ - ***Docs***
+Contiene el documento final en formato PDF y la presentacion usada para el video tambien en este mismo formato
 
 ## Alcance
 El alcance inicial definido será un clustering primero usando PCA para determinar las dimensiones más relevantes de las que esta compuestos los datos, aunque inicialmente ya se pudo ver unas variables bastante interesantes que habrá que codificar pues son en su mayoría categóricas para después pasar a usar clustering y determinar grupos de personas o películas que se parecen y recomendarle a las personas según sus calificaciones de otras películas que han visto.
