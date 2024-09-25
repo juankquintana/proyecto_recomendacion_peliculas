@@ -10,12 +10,33 @@
 - [Literatura](#literatura)
 - [Recomendador](#recomendador)
 
+
+Todos los servicios por suscripción masivos compiten por mantener y atraer a usuarios que cada vez tienen más opciones para escoger. Aún cuando creemos que este negocio ya está completamente inventado, ¿cuántas veces nos sorprendemos por las recomendaciones que recibimos de estos servicios? 
+El propósito de este trabajo es explorar las preferencias de los usuarios de una plataforma de películas y tratar de encontrar oportunidades que conduzcan a recomendaciones de contenido curadas y acertadas para ellos. 
+El trabajo presenta varios desafíos:  no contamos con información sobre las características de los usuarios y debemos inferir relaciones entre ellos a través de los ratings que los mismos han dado a las películas.  Existe una gran dimensionalidad en los datos lo que dificulta su manejo y; no somos expertos en este negocio por lo cual se nos dificulta la evaluación de los resultados de los modelos.
+
+Las bases de datos utilizadas corresponden a MovieLens,  un grupo de investigación del Departamento de Ingeniería y Ciencias Computacionales de la  Universidad de Minnesota. 
+
+Luego de tomar una muestra de los datos y limpiarlos se probaron distintos modelos para la creación de un recomendador de películas con las siguientes características: 
+- Se utilizan los promedios de ratings ponderados por género para recomendar películas a usuarios nuevos.
+- De lo contrario se combina el método de filtrado colaborativo utilizando  descomposición en valores singulares y el método de filtrado en base a contenidos utilizando Natural Language processing (NLP) para identificar películas similares. 
+
+
 ## Introducción
 *¿Qué películas me recomienda un sistema de aprendizaje no supervisado sabiendo que he calificado ciertas películas con un puntaje  entre 1 y 5?*
 
 
 La clave del éxito de las plataformas de streaming, sobre todo Netflix la precursora de estas, es la capacidad para conocer y adaptarse a las preferencias y gustos de diferentes mercados y audiencias. La inversión que hace Netflix en contenido original ha permitido que el mundo del streaming se haya expandido tanto, pero más que tener un montón de películas para ver sin parar, Netflix sabe en cuáles películas invertir que les genere mayor retorno. Esta pregunta es interesante porque plantea que, al saber qué películas les gustan a los clientes, es posible predecir qué otras películas podrían disfrutar dada su predilección por  las primeras. Este es un problema de agrupamiento, donde buscamos crear clústeres de películas infiriendo que la similitud entre las mismas implica que si a una persona le gustó una película dentro de ese cluster podría también gustarle otra película del mismo y por ello recomendaremos en base a ello.
 
+El problema a resolver es de gran pertinencia. Vivimos en la era del consumo digital y estamos en el medio del auge del uso de datos de los usuarios para anticiparse a sus necesidades, lo que se conoce comúnmente como análisis predictivo o personalización predictiva. 
+
+El cliente potencial de esta solución puede ser cualquier servicio de subscripción de contenidos en su búsqueda por atraer y retener a sus clientes ofreciendo buenas recomendaciones que mantengan a los usuarios involucrados con el servicio.  Al mismo tiempo la solución podría aplicarse a otro contexto donde los usuarios califiquen un producto o servicio y donde se encuentre distintas categorías de los mismos. 
+Este tipo de servicios de recomendación puede resultar clave a la hora de adquirir ventaja competitiva frente a otras compañías y alcanzar los ingresos esperados como empresa. 
+
+En este caso puntual la pregunta es: ¿Qué películas me recomienda un sistema de aprendizaje no supervisado sabiendo que he calificado ciertas películas con un puntaje  entre 1 y 5?
+La pregunta es sumamente interesante puesto que  al mismo tiempo es relevante evaluar de qué forma la podemos responder siendo eficientes en el uso de los recursos y siendo efectivos en cuanto a los resultados generados. También es importante considerar distintas alternativas de recomendación según si el usuario es nuevo en la plataforma o no, y poder siempre recomendarle una lista de películas. 
+Para abordar esta pregunta decidimos probar algunos de los modelos estudiados en el curso ya que los mismos representan los enfoques tradicionales en el ámbito del aprendizaje no supervisado. 
+Los mismos serán explicados con mayor detalle en el siguiente punto así como los resultados principales y las limitaciones encontradas.  
 
 
 ## Data
