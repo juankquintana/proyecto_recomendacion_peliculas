@@ -10,6 +10,9 @@
 - [Literatura](#literatura)
 - [Recomendador](#recomendador)
 
+## Video
+https://www.youtube.com/watch?v=3wKMVMFvhZM&t=1s
+
 ## Resumen
 Todos los servicios por suscripción masivos compiten por mantener y atraer a usuarios que cada vez tienen más opciones para escoger. Aún cuando creemos que este negocio ya está completamente inventado, ¿cuántas veces nos sorprendemos por las recomendaciones que recibimos de estos servicios? 
 El propósito de este trabajo es explorar las preferencias de los usuarios de una plataforma de películas y tratar de encontrar oportunidades que conduzcan a recomendaciones de contenido curadas y acertadas para ellos. 
