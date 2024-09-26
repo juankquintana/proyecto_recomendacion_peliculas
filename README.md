@@ -6,8 +6,7 @@
 - [Introducción](#introducción)
 - [Data](#data)
 - [Contenidos](#contenidos)
-- [Alcance](#alcance)
-- [Literatura](#literatura)
+- [Contenidos](#contenidos)
 - [Recomendador](#recomendador)
 
 ## Video
